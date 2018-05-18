@@ -1,7 +1,7 @@
 /*
  * Pizza.cpp
  *
- *  Created on: Mar 9, 2017
+ *  Created on: May 01 2018
  *  Author: PRINCE CLUMSON-EKLU
  *	EXAM # 1
  *	WSU ID # H888A642
@@ -13,8 +13,8 @@
 #include <ostream>
 #include <vector>
 
-#include "Pizza.h"
-#include "StringEnh.h"
+#include "MovieOrder.hpp"
+#include "StringEnh.hpp"
 
 class PizzaOrder {
 public:

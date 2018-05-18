@@ -9,7 +9,7 @@
 
 #include <ostream>
 #include <string>
-#include "StringEnh.h"
+#include "StringEnh.hpp"
 
 /**
  * The Movie class identifies properties of a movie.

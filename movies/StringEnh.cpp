@@ -1,8 +1,8 @@
 /*
  * StringEnh.cpp
  *
- *  Created on: Mar 2, 2017
- *      Author: Joe
+ *  Created on: May 2018
+ *      
  */
 
 #include <string>

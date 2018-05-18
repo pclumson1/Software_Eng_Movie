@@ -8,9 +8,9 @@
 #include <iostream>
 #include <time.h>
 
-#include "Pizza.h"
-#include "PizzaOrder.h"
-#include "StringEnh.h"
+#include "Movie.hpp"
+#include "MovieOrder.hpp"
+#include "StringEnh.hpp"
 
 void printTime();
 using namespace std;

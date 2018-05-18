@@ -1,8 +1,8 @@
 /*
  * StringEnh.h
  *
- *  Created on: Mar 2, 2017
- *      Author: Joe
+ *  Created on: May 2018
+ *     
  */
 
 #ifndef STRING_ENH_H_

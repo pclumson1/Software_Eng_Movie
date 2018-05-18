@@ -1,6 +1,6 @@
 /*
  * Movie.cpp
- *  Created on: Mar 9, 2017
+ *  Created on: May, 2018
  *  Author: PRINCE CLUMSON-EKLU
  *	WSU ID # H888A642
  */
@@ -9,10 +9,10 @@
 #include <cstdio>
 #include <ostream>
 
-#include "Pizza.h"
+#include "Movie.hpp"
 
 /**
- * Pan size constants
+ * Movie type constants
  */
 static const std::string SIZE_SMALL = "Regular";
 static const std::string SIZE_MEDIUM = "Children";
@@ -27,12 +27,12 @@ static const double PRICE_LARGE = 10.0;
 static const double PRICE_CHEESE_TOPPINGS = 1.0;
 
 /**
- * Toppings constants
+ * Number of additional days constants
  */
 static const int MAX_NUMBER_OF_CHEESE_TOPPINGS = 3;
 
 /**
- * Function to return pizza's price for a small
+ * Function to return movie's price for a regular
  */
 double Pizza::getPriceSmall()
 {
@@ -40,7 +40,7 @@ double Pizza::getPriceSmall()
 }
 
 /**
- * Function to return pizza's price for a medium
+ * Function to return movie's price for a children
  */
 double Pizza::getPriceMedium()
 {
@@ -48,7 +48,7 @@ double Pizza::getPriceMedium()
 }
 
 /**
- * Function to return pizza's price for a large
+ * Function to return movie's price for New Release
  */
 double Pizza::getPriceLarge()
 {
@@ -56,7 +56,7 @@ double Pizza::getPriceLarge()
 }
 
 /**
- * Function to return pizza's max number of cheese toppings
+ * Function to return movies's max number of additional days of renting
  */
 int Pizza::getMaxNumberOfCheeseToppings()
 {
@@ -64,7 +64,7 @@ int Pizza::getMaxNumberOfCheeseToppings()
 }
 
 /**
- * Function to cast pizza's pan size from type char to PanSize
+ * Function to cast movie's type from type char to MovieType
  */
 Pizza::PanSize Pizza::stringToPanSize(std::string str) {
 	PanSize panSize = UNKNOWN;
@@ -81,7 +81,7 @@ Pizza::PanSize Pizza::stringToPanSize(std::string str) {
 }
 
 /**
- * Function to return pizza's pan size as a string
+ * Function to return movie's type as a string
  */
 std::string Pizza::panSizeToString(PanSize panSize)
 {
@@ -98,7 +98,7 @@ std::string Pizza::panSizeToString(PanSize panSize)
 }
 
 /**
- * Function to validate pizza's pan size
+ * Function to validate movie's type
  */
 bool Pizza::isPanSizeValid(char c)
 {
@@ -116,7 +116,7 @@ bool Pizza::isPanSizeValid(char c)
 }
 
 /**
- * Function to validate pizza's pan size
+ * Function to validate a movie type as a string
  */
 bool Pizza::isPanSizeValid(std::string panSize)
 {
@@ -129,7 +129,7 @@ bool Pizza::isPanSizeValid(std::string panSize)
 }
 
 /**
- * Function to validate pizza's number of cheese toppings
+ * Function to validate movies's number of additional days
  */
 bool Pizza::isNumberOfCheeseToppingsValid(int numberOfCheeseToppings)
 {
@@ -153,29 +153,29 @@ Pizza::Pizza()
 }
 
 /**
- * Constructor allowing caller to specify a pizza's pan size and number of cheese toppings
+ * Constructor allowing caller to specify a movie type and number of additional days of rent
  */
 Pizza::Pizza(PanSize panSize, int numberOfCheeseToppings)
 {
 	this->initialized = false;
 
-	// Init other pizza's attributes
+	// Init other movie's attributes
 	this->panSize = panSize;
 	this->numberOfCheeseToppings = numberOfCheeseToppings + 1;
 
-	// Pizza now initialized
+	// movie now initialized
 	this->initialized = true;
 }
 
 /**
- * Accessor to return pizza's sizpanSize*/
+ * Accessor to return movie type*/
 Pizza::PanSize Pizza::getPanSize() const
 {
 	return panSize;
 }
 
 /**
- * Accessor to return pizza's number of cheese toppings
+ * Accessor to return movies number of additional renting days
  */
 int Pizza::getNumberOfCheeseToppings() const
 {
@@ -183,12 +183,12 @@ int Pizza::getNumberOfCheeseToppings() const
 }
 
 /**
- * Function to calculate and return pizza's cost
+ * Function to calculate and return movie's cost
  */
 double Pizza::calculateCost() const {
 	double cost = 0.0;
 
-	// Compute cost based on pan size
+	// Compute cost based on movie type
 	switch (panSize) {
 	case SMALL:
 		cost = getPriceSmall();
@@ -203,14 +203,14 @@ double Pizza::calculateCost() const {
 		break;
 	}
 
-	// Add cost of cheese toppings
+	// Add cost of additional day of rent
 	cost += (numberOfCheeseToppings - 1) * PRICE_CHEESE_TOPPINGS;
 
 	return cost;
 }
 
 /**
- * Returns true/false whether pizza is valid (initialized)
+ * Returns true/false whether movie is valid (initialized)
  */
 bool Pizza::isValid() const
 {
@@ -218,7 +218,7 @@ bool Pizza::isValid() const
 }
 
 /**
- * Function to return pizza as a string
+ * Function to return movie as a string
  */
 std::string Pizza::toString() const
 {
